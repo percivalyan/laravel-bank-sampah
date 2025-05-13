@@ -73,3 +73,16 @@ php artisan migrate --seed
 ```bash
 php artisan serve
 ```
+
+### Testing
+```bash
+email:
+admin@example.com: Role as Admin.
+ketua@example.com: Role as Chairman.
+bendahara@example.com: Role as Treasurer.
+petugas@example.com: Role as Officer.
+user@example.com: Role as Regular User.
+```
+```bash
+password: password123 (all role same password)
+```
