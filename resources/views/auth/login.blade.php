@@ -27,11 +27,12 @@
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-floating mb-3">
-                                            {{-- <input class="form-control @error('email') is-invalid @enderror"
+                                            <input class="form-control @error('email') is-invalid @enderror"
                                                 id="inputEmail" type="email" name="email"
                                                 placeholder="name@example.com" required autofocus
-                                                value="{{ old('email') }}" /> --}}
-                                            <select class="form-control @error('email') is-invalid @enderror"
+                                                value="{{ old('email') }}" />
+
+                                            {{-- <select class="form-control @error('email') is-invalid @enderror"
                                                 id="inputEmail" name="email" required autofocus>
                                                 <option value="">-- Pilih Email --</option>
                                                 <option value="admin@example.com"
@@ -49,7 +50,7 @@
                                                 <option value="user@example.com"
                                                     {{ old('email') == 'user@example.com' ? 'selected' : '' }}>
                                                     user@example.com</option>
-                                            </select>
+                                            </select> --}}
 
                                             <label for="inputEmail">Email address</label>
                                             @error('email')
@@ -57,10 +58,20 @@
                                             @enderror
                                         </div>
 
-                                        <div class="form-floating mb-3">
+                                        {{-- <div class="form-floating mb-3">
                                             <input class="form-control @error('password') is-invalid @enderror"
                                                 id="inputPassword" type="password" name="password"
                                                 placeholder="Password" value="password123" required />
+                                            <label for="inputPassword">Password</label>
+                                            @error('password')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div> --}}
+
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control @error('password') is-invalid @enderror"
+                                                id="inputPassword" type="password" name="password"
+                                                placeholder="Password" required />
                                             <label for="inputPassword">Password</label>
                                             @error('password')
                                                 <div class="invalid-feedback">{{ $message }}</div>
