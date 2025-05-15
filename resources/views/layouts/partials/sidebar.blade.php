@@ -42,6 +42,10 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-money-bill-wave"></i></div>
                             Tarik Tunai
                         </a>
+                        <a class="nav-link" href="{{ route('berita.index') }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-news"></i></div>
+                            Berita Artikel
+                        </a>
                     @endif
 
                     {{-- Menu khusus untuk Ketua --}}
