@@ -25,7 +25,7 @@
 - PHP 8.2.12 or higher
 - Composer 2.8.6 or higher
 - MySQL 5.7+ or MariaDB 10.3+
-- XAMPP/WAMP/LAMP (optional)
+- XAMPP/WAMP/LAMP/Laragon (optional)
 
 ## Installation
 
@@ -34,7 +34,7 @@
 git clone https://github.com/percivalyan/laravel-bank-sampah.git
 ```
 ```bash
-cd laravel-simple-multi-role-auth
+cd laravel-bank-sampah
 ```
 
 ### Install PHP dependencies
