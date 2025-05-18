@@ -213,8 +213,12 @@
                         <i class="fa fa-calendar-alt me-2"></i>
                         {{ \Carbon\Carbon::parse($berita->published_date)->format('d M Y') }}
                     </div>
-                    @if($berita->image)
-                        <img src="{{ asset('storage/' . $berita->image) }}" alt="{{ $berita->title }}" class="img-fluid rounded mb-4" />
+                    @if ($berita->photo)
+                        <img src="{{ asset('storage/' . $berita->photo) }}" alt="Foto Berita"
+                            class="img-fluid rounded-top w-100">
+                    @else
+                        <img src="{{ asset('home/img/blog-' . (($index % 3) + 1) . '.jpg') }}"
+                            class="img-fluid rounded-top w-100" alt="{{ $berita->title }}">
                     @endif
                     <div class="content">
                         {!! $berita->content !!}
