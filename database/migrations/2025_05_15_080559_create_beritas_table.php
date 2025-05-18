@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('slug');
             $table->text('summary')->nullable();
             $table->text('content')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }
