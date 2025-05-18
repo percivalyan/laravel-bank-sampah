@@ -11,13 +11,13 @@ class TransaksiController extends Controller
 {
     public function index()
     {
-        $transaksis = Transaksi::with(['user', 'sampah'])->get();
+        $transaksis = Transaksi::with(['user', 'sampah'])->paginate(10);
         return view('features.transaksi.index', compact('transaksis'));
     }
 
     public function indexPrint()
     {
-        $transaksis = Transaksi::with(['user', 'sampah'])->get();
+        $transaksis = Transaksi::with(['user', 'sampah'])  ->paginate(10); 
         return view('features.transaksi.indexPrint', compact('transaksis'));
     }
 

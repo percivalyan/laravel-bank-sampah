@@ -13,7 +13,7 @@ class SaldoController extends Controller
     {
         $saldos = Saldo::with('user')->whereHas('user', function ($query) {
             $query->where('role', 'user');
-        })->get();
+        })->paginate(10);
 
         return view('features.saldo.index', compact('saldos'));
     }
