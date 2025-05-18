@@ -8,7 +8,7 @@
 
 ## Features
 
-- Login Multi Role (Admin, Editor & User)
+- Login Multi Role
 - Register (User)
 - User Management (Admin)
 - Coming Soon
@@ -62,6 +62,11 @@ DB_PORT=3306
 DB_DATABASE=Your Name Database
 DB_USERNAME=Your Username
 DB_PASSWORD=Your Password
+```
+
+### Storage Link for upload file
+```bash
+php artisan storage:link
 ```
 
 ### Run migrations and seeders
