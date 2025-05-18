@@ -44,14 +44,14 @@
                 <h4 class="mb-4">Jam Operasional</h4>
                 <p><strong>Senin - Jumat:</strong> 08.00 - 16.00 WIB</p>
                 <p><strong>Sabtu:</strong> 08.00 - 12.00 WIB</p>
-                <p><strong>Minggu & Hari Libur:</strong> Libur</p>
+                <p><strong>Minggu & Hari Libur:</strong> Tutup</p>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <h4 class="mb-4">Informasi Kontak</h4>
-                <p><i class="fa fa-map-marker-alt me-2"></i>Jl. Raya Serpong No. 123, Tangerang Selatan, Banten</p>
-                <p><i class="fas fa-envelope me-2"></i>info@banksampah.com</p>
-                <p><i class="fas fa-phone me-2"></i>+62 812 3456 7890</p>
-                <p><i class="fab fa-whatsapp me-2"></i>+62 812 3456 7890</p>
+                <p><i class="fa fa-map-marker-alt me-2"></i>Jl. Hijau No. 123, Jakarta</p>
+                <p><i class="fas fa-envelope me-2"></i>info@banksampah.id</p>
+                <p><i class="fas fa-phone me-2"></i>(021) 1234 5678</p>
+                <p><i class="fab fa-whatsapp me-2"></i>+62 812-3456-7890</p>
             </div>
         </div>
     </div>
