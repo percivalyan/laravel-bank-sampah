@@ -103,3 +103,4 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin,bendahara'])->group(f
 
 Route::get('/', [BeritaController::class, 'pageBerita']);
 Route::get('/berita/{id}', [BeritaController::class, 'show'])->name('berita.show');
+Route::get('/berita-all', [BeritaController::class, 'pageBeritaAll'])->name('berita.all');
