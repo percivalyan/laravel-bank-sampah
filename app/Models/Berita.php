@@ -15,7 +15,8 @@ class Berita extends Model
         'subtitle',
         'slug',
         'summary',
-        'content'
+        'content',
+        'photo'
     ];
 
     protected $dates = [

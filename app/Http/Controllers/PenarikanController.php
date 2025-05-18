@@ -12,7 +12,14 @@ class PenarikanController extends Controller
 {
     public function showUsers()
     {
-        $users = User::where('role', 'user')->get();
+        // Ambil user dengan role 'user' yang memiliki saldo terakhir > 0
+        $users = User::where('role', 'user')
+            ->whereHas('saldos', function ($query) {
+                $query->orderBy('created_at', 'desc')
+                    ->limit(1)
+                    ->where('total', '>', 0);
+            })
+            ->get();
 
         return view('features.penarikan.select_user', compact('users'));
     }
@@ -44,7 +51,7 @@ class PenarikanController extends Controller
             return redirect()->back()->with('error', 'Saldo Anda tidak cukup untuk melakukan penarikan.');
         }
 
-        $saldo->total -= $validated['jumlah']; 
+        $saldo->total -= $validated['jumlah'];
 
         $penarikan = new Penarikan();
         $penarikan->user_id = $user->id;
@@ -64,7 +71,7 @@ class PenarikanController extends Controller
         $penarikans = Penarikan::with(['saldo'])
             ->where('user_id', $user->id)
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(10);
 
         return view('features.penarikan.index', compact('penarikans'));
     }

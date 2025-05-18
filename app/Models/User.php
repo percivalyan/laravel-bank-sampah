@@ -46,4 +46,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // di model User.php
+    public function saldos()
+    {
+        return $this->hasMany(Saldo::class);
+    }
 }
