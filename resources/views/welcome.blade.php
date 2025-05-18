@@ -20,8 +20,9 @@
                 </div>
                 <div class="d-none d-xl-flex me-3">
                     <div class="d-flex flex-column pe-3 border-end border-primary">
-                        <span class="text-body">Get Free Delivery</span>
-                        <a href="tel:+4733378901"><span class="text-primary">Free: + 0123 456 7890</span></a>
+                        <span class="text-body">Contact Person</span>
+                        <a href="tel:+4733378901"><span class="text-primary">WA:
+                                +62 812-3456-7890</span></a>
                     </div>
                 </div>
                 <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
@@ -69,7 +70,8 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img src="{{ asset('home/img/carousel-1.jpg') }}" class="img-fluid w-100" alt="Image">
+                        <img src="{{ asset('unsplash/nikhil-mitra-jKe_eHk50Zk-unsplash.jpg') }}" class="img-fluid w-100"
+                            alt="Image">
                         <div class="carousel-caption-1">
                             <div class="carousel-caption-1-content" style="max-width: 900px;">
                                 <h4 class="text-white text-uppercase fw-bold mb-4 fadeInLeft animated"
@@ -116,7 +118,8 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('home/img/carousel-2.jpg') }}" class="img-fluid w-100" alt="Image">
+                        <img src="{{ asset('unsplash/roger-starnes-sr-M79O3aCIGAo-unsplash.jpg') }}"
+                            class="img-fluid w-100" alt="Image">
                         <div class="carousel-caption-2">
                             <div class="carousel-caption-2-content" style="max-width: 900px;">
                                 <h4 class="text-white text-uppercase fw-bold mb-4 fadeInRight animated"
@@ -273,9 +276,10 @@
                 <div class="row g-5">
                     <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
                         <div class="about-img rounded h-100">
-                            <img src="{{ asset('home/img/about.jpg') }}" class="img-fluid rounded h-100 w-100"
-                                style="object-fit: cover;" alt="Tentang Bank Sampah">
-                            <div class="about-exp"><span>10+ Tahun Pengalaman</span></div>
+                            <img src="{{ asset('unsplash/shamblen-studios-jfhFJirnwcE-unsplash.jpg') }}"
+                                class="img-fluid rounded h-100 w-100" style="object-fit: cover;"
+                                alt="Tentang Bank Sampah">
+                            {{-- <div class="about-exp"><span>10+ Tahun Pengalaman</span></div> --}}
                         </div>
                     </div>
                     <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
@@ -411,8 +415,13 @@
                         <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="{{ 0.2 + $index * 0.2 }}s">
                             <div class="blog-item shadow-sm rounded bg-white">
                                 <div class="blog-img position-relative">
-                                    <img src="{{ asset('home/img/blog-' . (($index % 3) + 1) . '.jpg') }}"
-                                        class="img-fluid rounded-top w-100" alt="{{ $berita->title }}">
+                                    @if ($berita->photo)
+                                        <img src="{{ asset('storage/' . $berita->photo) }}" alt="Foto Berita"
+                                            class="img-fluid rounded-top w-100">
+                                    @else
+                                        <img src="{{ asset('home/img/blog-' . (($index % 3) + 1) . '.jpg') }}"
+                                            class="img-fluid rounded-top w-100" alt="{{ $berita->title }}">
+                                    @endif
                                     <div
                                         class="blog-date px-3 py-1 bg-primary text-white position-absolute top-0 end-0 m-3 rounded">
                                         <i class="fa fa-calendar-alt me-1"></i>
@@ -440,6 +449,17 @@
                             <p class="text-muted">Belum ada berita yang tersedia saat ini.</p>
                         </div>
                     @endforelse
+                </div>
+
+                <!-- PAGINATION -->
+                <div class="d-flex justify-content-center mt-4">
+                    {{ $beritas->onEachSide(1)->links('pagination::bootstrap-5') }}
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="{{ url('berita-all') }}" class="btn btn-primary">
+                        Lihat Semua Berita
+                    </a>
                 </div>
             </div>
         </div>
